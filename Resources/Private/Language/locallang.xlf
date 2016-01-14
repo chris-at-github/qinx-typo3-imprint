@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-01-14T07:08:20Z" product-name="qximprint">
+		<header/>
+		<body>
+			<trans-unit id="tx_qximprint_domain_model_data">
+				<source>Data</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.url">
+				<source>Url</source>
+			</trans-unit>
+			<trans-unit id="tx_qximprint_domain_model_data.logo">
+				<source>Logo</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
