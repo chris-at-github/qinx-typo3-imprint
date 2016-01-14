@@ -30,36 +30,31 @@ namespace Qinx\Qximprint\Controller;
 /**
  * DataController
  */
-class DataController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-{
+class DataController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
-    /**
-     * dataRepository
-     * 
-     * @var \Qinx\Qximprint\Domain\Repository\DataRepository
-     * @inject
-     */
-    protected $dataRepository = NULL;
+	/**
+	 * @var string
+	 */
+	protected $defaultViewObjectName = 'TYPO3\CMS\Extbase\Mvc\View\JsonView';
     
-    /**
-     * action get
-     * 
-     * @return void
-     */
-    public function getAction()
-    {
-        
-    }
-    
-    /**
-     * action show
-     * 
-     * @param \Qinx\Qximprint\Domain\Model\Data $data
-     * @return void
-     */
-    public function showAction(\Qinx\Qximprint\Domain\Model\Data $data)
-    {
-        $this->view->assign('data', $data);
-    }
+	/**
+	 * action get
+	 *
+	 * @return void
+	 */
+	public function getAction() {
+		$this->view->setVariablesToRender(array('data'));
+		$this->view->assign('data', $this->objectManager->get('Qinx\Qximprint\Domain\Repository\DataRepository')->findByUid(1));
+	}
 
+	/**
+	 * action show
+	 *
+	 * @param \Qinx\Qximprint\Domain\Model\Data $data
+	 * @return void
+	 */
+	public function showAction(\Qinx\Qximprint\Domain\Model\Data $data)
+	{
+			$this->view->assign('data', $data);
+	}
 }

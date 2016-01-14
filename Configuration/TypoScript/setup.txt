@@ -1,4 +1,3 @@
-
 plugin.tx_qximprint_pi1 {
 	view {
 		templateRootPaths.0 = {$plugin.tx_qximprint_pi1.view.templateRootPath}
@@ -10,36 +9,35 @@ plugin.tx_qximprint_pi1 {
 	}
 }
 
-plugin.tx_qximprint._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
+1452752438 = PAGE
+1452752438 {
+	typeNum = 1452752438
+
+	10 = USER
+	10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = Qximprint
+    pluginName = Pi1
+    vendorName = Qinx
+    controller = Data
+    action = get
+    switchableControllerActions {
+			Data {
+				1 = get
+			}
+    }
+
+    view < plugin.tx_qximprint_pi1.view
+    persistence < plugin.tx_qximprint_pi1.persistence
+    settings < plugin.tx_qximprint_pi1.settings
 	}
 
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
-
-	.tx-qximprint table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-qximprint table th {
-		font-weight:bold;
-	}
-
-	.tx-qximprint table td {
-		vertical-align:top;
-	}
-
-	.typo3-messages .message-error {
-		color:red;
-	}
-
-	.typo3-messages .message-ok {
-		color:green;
-	}
-
-)
+	config {
+    disableAllHeaderCode = 1
+    #additionalHeaders = Content-type:application/json
+    xhtml_cleaning = 0
+    no_cache = 1
+    admPanel = 0
+    debug = 0
+  }
+}
