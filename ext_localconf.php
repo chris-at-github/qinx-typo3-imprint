@@ -7,12 +7,10 @@ if (!defined('TYPO3_MODE')) {
 	'Qinx.' . $_EXTKEY,
 	'Pi1',
 	array(
-		'Data' => 'get, show',
-		
+		'Data' => 'show',
 	),
 	// non-cacheable actions
 	array(
 		'Data' => '',
-		
 	)
 );
