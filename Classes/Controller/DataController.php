@@ -62,6 +62,7 @@ class DataController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return void
 	 */
 	public function showAction() {
+		$this->objectManager->get('Qinx\Qximprint\Domain\Repository\DataRepository')->findFromRemote();
 		$this->view->assign('data', $this->objectManager->get('Qinx\Qximprint\Domain\Repository\DataRepository')->findByUid((int)$this->settings['defaultUsedRecord']));
 	}
 }

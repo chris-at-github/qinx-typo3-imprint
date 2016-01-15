@@ -30,8 +30,8 @@ namespace Qinx\Qximprint\Domain\Repository;
 /**
  * The repository for Datas
  */
-class DataRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
-{
-
-    
+class DataRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+	public function findFromRemote() {
+		echo \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl('http://qinx.local/?type=1452752438');
+	}
 }
