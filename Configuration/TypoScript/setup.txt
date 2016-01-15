@@ -7,6 +7,10 @@ plugin.tx_qximprint_pi1 {
 	persistence {
 		storagePid = {$plugin.tx_qximprint_pi1.persistence.storagePid}
 	}
+	settings {
+		getActionTypeNum = 1452752438
+		defaultUsedRecord = 1
+	}
 }
 
 1452752438 = PAGE

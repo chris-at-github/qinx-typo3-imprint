@@ -33,9 +33,19 @@ namespace Qinx\Qximprint\Controller;
 class DataController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var string
+	 * Initializes the controller before invoking an action method.
+	 *
+	 * Override this method to solve tasks which all actions have in
+	 * common.
+	 *
+	 * @return void
+	 * @api
 	 */
-	protected $defaultViewObjectName = 'TYPO3\CMS\Extbase\Mvc\View\JsonView';
+	protected function initializeAction() {
+		if((int)\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('type') === (int) $this->settings['getActionTypeNum']) {
+			$this->defaultViewObjectName = \TYPO3\CMS\Extbase\Mvc\View\JsonView::class;
+		}
+	}
     
 	/**
 	 * action get
@@ -43,18 +53,15 @@ class DataController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return void
 	 */
 	public function getAction() {
-		$this->view->setVariablesToRender(array('data'));
-		$this->view->assign('data', $this->objectManager->get('Qinx\Qximprint\Domain\Repository\DataRepository')->findByUid(1));
+		$this->view->assign('value', $this->objectManager->get('Qinx\Qximprint\Domain\Repository\DataRepository')->findByUid((int) $this->settings['defaultUsedRecord']));
 	}
 
 	/**
 	 * action show
 	 *
-	 * @param \Qinx\Qximprint\Domain\Model\Data $data
 	 * @return void
 	 */
-	public function showAction(\Qinx\Qximprint\Domain\Model\Data $data)
-	{
-			$this->view->assign('data', $data);
+	public function showAction() {
+		$this->view->assign('data', $this->objectManager->get('Qinx\Qximprint\Domain\Repository\DataRepository')->findByUid((int)$this->settings['defaultUsedRecord']));
 	}
 }
